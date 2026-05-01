@@ -22,15 +22,29 @@
 
 //_____________( Optimal Solution )_______________
 
+// var runningSum = function(nums) {
+
+// let sum=0;
+//  for(let i=0; i< nums.length; i++){
+//      sum += nums[i];
+//      nums[i] = sum;
+    
+//  }
+//   return nums;
+// };
+
+// runningSum([1,2,3,4]);
+
+//________________( Much Optimal solution )_____________
+
 var runningSum = function(nums) {
 
-let sum=0;
- for(let i=0; i< nums.length; i++){
-     sum += nums[i];
-     nums[i] = sum;
-    
+ for(let i=1; i< nums.length; i++){
+     nums[i] = nums[i] + nums[i - 1];
+   
  }
   return nums;
 };
 
 runningSum([1,2,3,4]);
+
